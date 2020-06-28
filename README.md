@@ -10,7 +10,8 @@ node+MongoDB+bootstrap+jquery
 
 ### 功能介绍：
 #### 用户管理：
-登录用户管理
+>登录用户管理
+
 >>用户登录
 
 >>用户登录验证
@@ -21,7 +22,8 @@ node+MongoDB+bootstrap+jquery
 
 >>修改某一用户
 
-该用户的文章管理
+>该用户的文章管理
+
 >>增加新文章
 
 >>删除某一文章
@@ -29,4 +31,4 @@ node+MongoDB+bootstrap+jquery
 >>修改某一文章信息
 
 #### 文章页面管理：
-文章的展示功能
+>文章的展示功能

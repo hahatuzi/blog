@@ -1,0 +1,9 @@
+{{extend './layout.art'}}
+{{block 'script'}}
+<script>
+alert('邮箱或密码有误')
+setTimeout(function(){
+	location.href="/admin/login"
+},800)
+</script>
+{{/block}}

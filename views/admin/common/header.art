@@ -1,0 +1,13 @@
+<div class="header">
+		<div class="logo">正经博客<i>SERIOUS</i></div>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    用户
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		    <li><a href="#">个人资料</a></li>
+		    <li><a href="#">用户退出</a></li>
+		  </ul>
+		</div>
+</div>

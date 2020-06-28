@@ -1,0 +1,90 @@
+{{extend './common/layout.art'}}
+{{block 'main'}}
+	<!-- 头部模块 -->
+    <!-- 子模板的相对路径 -->
+	{{include './common/header.art'}}
+	
+	<!-- 侧边栏模块 -->
+	{{include './common/aside.art'}}
+	<div class="main">
+	<!-- 主体内容 -->
+		<div class="admin-data">
+	         <h2>admin</h2>
+	         <a href="/admin/article-edit" class="newadmin">新增文章</a>
+	         <h4 class="tips">文章信息提示:</h4>   
+		</div>
+		<div class="detail">
+            <table>
+	            <thead>
+	                <tr><th>用户ID</th><th>文章标题</th><th>发布时间</th><th>作者</th><th>操作</th></tr>
+	            </thead>
+	            <tbody>
+	            {{each article.records}}
+		            <tr>
+			            <td>{{@$value._id}}</td>
+			            <td>{{$value.title}}</td>
+			            <td>{{$value.publishData}}</td>
+			            <td>{{$value.author}}</td>
+			            <td>
+				            <a href="/admin/article-edit?id={{@$value._id}}" class="glyphicon glyphicon-pencil"></a>
+				            <a href="#" class="glyphicon glyphicon-remove" data-id="{{@$value._id}}" data-title="{{$value.title}}" id="delete"></a>
+			            </td>
+		            </tr>
+	            {{/each}}
+	            </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+			  <ul class="pagination">
+			  {{if article.page>1}}
+			    <li>
+			      <a href="/admin/article?page={{article.page-1}}" aria-label="Previous" class="previous">&laquo
+			      </a>
+			    </li>
+			  {{/if}}
+			    {{each article.display}}
+			    <li><a href="/admin/article?page={{$value}}">{{$value}}</a></li>
+			    {{/each}}
+			    {{if article.page<article.pages}}
+			    <li>
+			      <a href="/admin/article?page={{article.page-0+1}}" aria-label="Next" class="next">&raquo
+			      </a>
+			    </li>
+			    {{/if}}
+			  </ul>
+			</nav>
+			<div class="delete">
+             <div>
+                  <form method="get" name="form">
+                      <h4>请确认:</h4>
+                      <div class="delete1">
+                         <h4>你确认要删除该文章吗?</h4>
+                         <input  name="title" id="confirm">
+                      </div>
+                      <div class="delete2">
+                           <button type="submit" class="cancel">取消</button>
+                           <button type="submit" class="submit">确认</button>
+                      </div>
+                  </form>
+             </div>
+	        </div>
+	    </div>
+    </div>	
+{{/block}}
+{{block 'script'}}
+    <script>
+       window.onload=function(){
+       $(".glyphicon-remove").on('click',function(){
+       var data=$(this).attr("data-title")
+       $("#confirm").val(data);
+       })
+       $(".cancel").on('click',function(){
+       var url="/admin/acticle"
+       document.form.action=url
+       })
+       $(".submit").on('click',function(){
+       var url="/admin/article-delete"
+       document.form.action=url
+       })
+       }
+    </script>
+{{/block}}

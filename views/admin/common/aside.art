@@ -1,0 +1,7 @@
+<div class="aside">
+		<ul>
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span><span>用户管理</span></a></li>
+			<li><a href="/admin/article"><span class="glyphicon glyphicon-th-list"></span><span>文章管理</span></a></li>
+		</ul>
+		<div class="copyright"><a href="">©PowerBy 正经博客</a></div>
+</div>

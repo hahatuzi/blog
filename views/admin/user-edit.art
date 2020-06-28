@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/admin/css/user-edit.css">
+	<link rel="stylesheet" href="/admin/bootstrap/css/bootstrap.css">
+	<script src="/jquery-1.12.4.js"></script>
+	<script src="/admin/bootstrap/js/bootstrap.js"></script>   
+</head>
+<body>
+	<!-- 头部模块 -->
+	<div class="header">
+		<div class="logo">正经博客<i>SERIOUS</i></div>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    用户
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		    <li><a href="#">个人资料</a></li>
+		    <li><a href="#">用户退出</a></li>
+		  </ul>
+		</div>
+	</div>
+	<div class="footer">
+          <!-- 侧边栏模块 -->
+		<div class="aside">
+			<ul>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span><span>用户管理</span></a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-th-list"></span><span>文章管理</span></a></li>
+			</ul>
+			<div class="copyright"><a href="">©PowerBy 正经博客</a></div>
+		</div>
+		<!-- 主体内容 -->
+	    <div class="main">
+	         <div class="admin-data">
+                 <h2>admin</h2>
+                 <h4 class="tips">新增用户信息提示:{{msg}}</h4>
+	         </div>
+	         <div class="data">
+	              <form action="{{link}}" method="post">
+	              	<span>用户名</span><input type="text" placeholder="请输入用户名" name="usename" value="{{use&&use.usename}}">
+	              	<span>邮箱</span><input type="text" placeholder="请输入邮箱地址" name="email" value="{{use&&use.email}}">
+	              	<span>密码</span><input type="text" placeholder="请输入密码" name="password" value="{{use&&use.password}}">
+	              	<span>角色</span><select name="role" id="" ><option value="normal"{{use&&use.role=='normal'?'selected':''}}>普通用户</option><option value="admin" {{use&&use.role=='admin'?'selected':''}}>超级管理员</option></select>
+	              	<span>登录状态</span><select id="" name="state"><option value="0" {{use&&use.state==0?'selected':''}}>启用</option><option value="1" {{use&&use.state==1?'selected':''}}>禁用</option></select>
+	              	<button type="submit" id="btn">{{use?'修改':'提交'}}</button>
+	              </form>
+	         </div>
+	    </div>
+	</div>
+</body>
+
+</html>

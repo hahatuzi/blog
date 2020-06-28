@@ -1,0 +1,105 @@
+.header{
+	width: 100%;
+	background-color: #1922a5;
+	height: 70px;
+}
+.header-nav{
+	width: 92%;
+	margin:0 auto;
+	height: 70px;
+	position: relative;
+}
+.header-nav .logo{
+	display: block;
+	height: 60px;
+	width: 140px;
+}
+.header-nav img{
+	margin-top: 5px;
+}
+.header-nav ul{	
+	position: absolute;
+	top:20px;
+	right: 0;
+}
+.header-nav li{
+	
+	float: left;
+	list-style: none;
+}
+.header-nav li a{
+	display: block;
+	text-decoration: none;
+	width: 50px;
+	height:30px;
+	line-height: 30px;
+	text-align:center;
+	color: white;
+	font-size: 16px;
+	font-weight: bolder;
+}
+.article{
+	width: 92%;
+	height:980px;
+	margin:0 auto;
+	background-color: #e8eaed;
+	border:1px solid #ccc;
+	position: relative;
+}
+.article div{
+	width: 50%;
+	height: 450px;
+/*	background-color: white;*/
+	float: left;
+}
+.article nav{
+	width: 100%;
+	height: 34px;
+	position:absolute;
+	text-align:center;
+	bottom: 40px;
+}
+.article div  .articles{
+	width: 84%;
+	height: 90%;
+	border-bottom:1px solid #ccc;
+	margin:5% 7%;
+	background-color: white;
+	box-shadow:4px 4px rgba(0,0,0,0.07);
+}
+.articles a{
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	height: 220px;
+/*	background-color: yellow;*/
+}
+.articles span{
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 3px;
+	/*将文本内容那个信息强制一行内显示，将多余文本隐藏并用省略号代替*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 18px;
+	font-weight: bolder;
+	
+}
+.articles span:nth-child(3){
+	font-size: 13px;
+	font-weight: normal;
+}
+.articles p{
+	font-size: 13px;
+	padding: 3px;
+	text-indent:26px;
+	width: 100%;
+	height: 145px;
+/*	background-color: yellow;*/ 
+/*	white-space: normal;*/
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+}

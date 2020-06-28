@@ -1,0 +1,46 @@
+
+{{extend './common/layout.art'}}
+{{block 'link'}}
+<link rel="stylesheet" href="/admin/css/article-edit.css">
+{{/block}}
+{{block 'main'}}
+<!-- 头部模块 -->
+{{include './common/header.art'}}	
+<div class="footer">
+ <!-- 侧边栏模块 -->
+{{include './common/aside.art'}}
+		<!-- 主体内容 -->
+<div class="main">
+     <div class="admin-data">
+         <h2>admin</h2>
+         <h4 class="tips">新增文章信息提示:{{msg}}</h4>
+     </div>
+     <div class="data">
+          <form action="/admin/article-add" method="post" enctype="multipart/form-data">
+          <!-- name属性是为了方便服务器接收客户端的请求数据 -->
+          	<span>标题</span><input type="text" placeholder="请输入文章标题" name="title" >
+          	<span>作者</span><input type="text" name="author" value={{@userInfo._id}}>
+          	<span>发布时间</span><input type="text" name="publishDate">
+          	<span>文章封面</span><input type="file" name="cover" class="data1">
+          	<div class="image"><img src="" class="thumb"></div>
+            <span>内容</span><textarea name="content" id=""></textarea>
+          	<button type="submit" id="btn">{{use?'修改':'提交'}}</button>
+          </form>
+     </div>
+</div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script>
+    var thumb=document.querySelector('.thumb');
+	$(".data1").on('change',function(){
+		var reader=new FileReader();
+        // console.log(this.files);
+        reader.readAsDataURL(this.files[0]);
+        reader.onload=function(){
+        	// console.log(reader.result)
+        	thumb.src=reader.result;
+        }
+	})
+</script>
+{{/block}}

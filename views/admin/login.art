@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="/admin/css/login.css">
+    <script src="/jquery-1.12.4.js"></script>
+</head>
+<body>
+  <h2><!-- <strong> -->博客管理员登录<!-- </strong> --></h2>
+	<div class="login">
+        <span>邮箱</span>
+        <form action="/admin/login" method="post" id="loginForm">
+            <input type="text" placeholder="请输入邮箱地址" name="email" id="address">
+            <span>密码</span>
+            <input type="text" placeholder="请输入密码" name="password" id="password">
+            <button type="submit" id="btn">登录</button>
+        </form>
+	</div>
+<script src="/admin/js/common/common.js"></script>
+<script src="/admin/bootstrap/js/bootstrap.js"></script>
+<script>
+   // 为表单添加按钮事件
+   $('#loginForm').on('submit',function(){
+    
+      var result=serializeToJson($(this));
+      if (result.email.trim().length==0) {
+        alert('邮箱不能为空');
+        return false;
+        // 组织程序继续执行
+    }
+    if (result.password.trim().length==0) {
+        alert('密码不能为空')
+        return false;
+    }
+      console.log(result);
+    // 该方法可以获取到表单中用户输入的内容
+    // return false;
+
+    // 阻止表单默认提交行为
+   })
+</script>
+</body>
+
+
+</html>

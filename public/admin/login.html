@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="css/login.css">
+    <script src="../jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h2><!-- <strong> -->博客管理员登录<!-- </strong> --></h2>
+	<div class="login">        
+        <form action="user.html" id="loginForm" method="post">
+            <span>邮箱</span>
+            <input type="text" placeholder="请输入邮箱地址" id="address">
+            <span>密码</span>
+            <input type="text" placeholder="请输入密码" id="password">
+            <button type="submit" id="btn">登录</button>
+        </form>
+	</div>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script>
+   $('#loginForm').on('submit',function(){
+    var a=$(this).serializeArray();
+    console.log(a)
+    console.log('shibai')
+    // 获取到表单中用户输入的内容
+    return false;
+    // 阻止表单默认提交行为
+   })
+</script>
+</body>
+</html>

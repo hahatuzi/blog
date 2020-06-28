@@ -1,0 +1,43 @@
+*{
+		margin:0;
+	}
+	h2{
+		display:block;
+		text-align:center;
+		margin-top:100px;
+		margin-bottom:20px;
+	}
+    .login{
+    	width: 475px;
+    	height:210px;
+        border:1px solid #ccc;
+        border-top:3px solid #1922a5;
+        margin:auto;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    span{
+    	display:block;
+    	padding:20px 0 5px 20px ;
+    	padding-top: 15px;
+    	font-weight:bold; 
+    	font-size: 15px;
+    }
+    #address,#password{
+    	width:350px;
+    	height:25px;
+    	margin-left: 20px;
+    	padding-left: 5px;
+    	border:1px solid #C0C0C0;
+    }
+    #btn{
+    	display: block;
+    	margin-left:20px;
+    	margin-top: 20px;
+    	letter-spacing: 3px;
+    	background-color: #1922a5;
+    	color:white;
+    	border:1px solid #1922a5;
+    	width:50px;
+    	height:25px;
+    	border-radius: 5px;
+    }
